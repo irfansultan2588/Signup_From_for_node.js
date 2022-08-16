@@ -46,11 +46,11 @@
 
         function signup() {
 
-            var firstName = document.querySelector("#firstName").Value;
-            var lastName = document.querySelector("#lirstName").Value;
-            var email = document.querySelector("#email").Value;
-            var password = document.querySelector("#password").Value;
-            var repeatPassword = document.querySelector("#repeatPassword").Value;
+            let firstName = document.querySelector("#firstName").Value;
+            let lastName = document.querySelector("#lirstName").Value;
+            let email = document.querySelector("#email").Value;
+            let password = document.querySelector("#password").Value;
+            let repeatPassword = document.querySelector("#repeatPassword").Value;
 
             if (password !== repeatPassword) {
                 document.querySelector("#message").innerHTML = "password do not match";

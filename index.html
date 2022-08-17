@@ -5,55 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <title>Singup Form</title>
 </head>
 
 <body>
+    <h1>Signup & Login Form</h1>
 
-    <form onsubmit="signup(); return false;">
 
+    <form onsubmit="signup(); return false ">
 
-        <label for="firstName">FirstName</label>
-        <input type="text" placeholder="firstName" id="firstName" required>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" required>
         <br>
 
-        <label for="lastName">LastName</label>
-        <input type="text" placeholder="lastName" id="lastName" required>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" required>
         <br>
 
         <label for="email">Email</label>
-        <input type="email" placeholder="Email" id="email" required>
+        <input type="email" id="email" required>
         <br>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="password" id="password" required>
+        <input type="password" id="password" required>
         <br>
 
-        <label for="repeatPassword">RepeatPassword</label>
-        <input type="password" placeholder="repeatPassword" id="repeatPassword" required>
+        <label for="repeatPassword">Repeat Password</label>
+        <input type="password" id="repeatPassword" required>
         <br>
 
-        <input type="submit" value="Singup"></input>
+        <input type="submit" value="Signup">
     </form>
 
     <p id="message"></p>
+
+
     <br>
     <br>
+
 
     <script>
 
         function signup() {
 
-            let firstName = document.querySelector("#firstName").Value;
-            let lastName = document.querySelector("#lastName").Value;
-            let email = document.querySelector("#email").Value;
-            let password = document.querySelector("#password").Value;
-            let repeatPassword = document.querySelector("#repeatPassword").Value;
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var repeatPassword = document.getElementById('repeatPassword').value;
 
             if (password !== repeatPassword) {
-                document.querySelector("#message").innerHTML = "password do not match";
+                document.querySelector("#message").innerHTML = 'Passwords do not match, please try again';
                 return;
             }
 
@@ -70,20 +74,15 @@
                     document.querySelector("#message").innerHTML = response.data.message;
                 })
                 .catch(function (error) {
-                    console.log(error.reponse.data);
-                    document.querySelector("#message").innerHTML = error.reponse.data.message;
+                    console.log(error.response.data);
+                    document.querySelector("#message").innerHTML = error.response.data.message;
                 });
-
         }
 
 
 
-
-
-
-
-
     </script>
+
 
 </body>
 

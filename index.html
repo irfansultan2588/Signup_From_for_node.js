@@ -5,122 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Signup & Login Form</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-    <h1>Signup & Login Form</h1>
+    <div class="maintop">
+        <div class="heading">
+            <h1>SignUp Form</h1>
+        </div>
 
 
-    <form onsubmit="signup(); return false ">
+        <div class="signupdiv">
+            <form onsubmit="signup(); return false ">
 
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" required>
-        <br>
+                <div class="fromfeld">
 
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" required>
-        <br>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-        <br>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" required>
-        <br>
-
-        <label for="repeatPassword">Repeat Password</label>
-        <input type="password" id="repeatPassword" required>
-        <br>
-
-        <input type="submit" value="Signup">
-    </form>
-
-    <p id="message"></p>
+                    <div><input type="text" placeholder="First Name" id="firstName" required></div>
+                </div>
 
 
-    <br>
-    <br>
-    <h1>Login Hare</h1>
+                <div class="fromfeld">
 
-    <form onsubmit="login(); return false ">
-        <label for="email">Email</label>
-        <input type="email" id="email2" required>
-        <br>
-
-        <label for="password">Password</label>
-        <input type="password" id="password2" required>
-        <br>
-
-        <input type="submit" value="Login">
-    </form>
-    <p id="message2"></p>
+                    <div> <input type="text" placeholder="Last Name" id="lastName" required> </div>
+                </div>
 
 
-    <script>
+                <div class="fromfeld">
 
-        function signup() {
-
-            var firstName = document.getElementById('firstName').value;
-            var lastName = document.getElementById('lastName').value;
-            var email = document.getElementById('email').value;
-            var password = document.getElementById('password').value;
-            var repeatPassword = document.getElementById('repeatPassword').value;
-
-            if (password !== repeatPassword) {
-                document.querySelector("#message").innerHTML = 'Passwords do not match, please try again';
-                return;
-            }
-
-            axios.post('http://localhost:3000/signup', {
-
-                firstName,
-                lastName,
-                email,
-                password,
-
-            })
-                .then(function (response) {
-                    console.log(response.data);
-                    document.querySelector("#message").innerHTML = response.data.message;
-                })
-                .catch(function (error) {
-                    console.log(error.response.data);
-                    document.querySelector("#message").innerHTML = error.response.data.message;
-                });
-        }
-
-        // LOGIN CODE///
-
-        function login() {
+                    <div> <input type="email" placeholder="Email" id="email" required></div>
+                </div>
 
 
-            var email = document.getElementById('email2').value;
-            var password = document.getElementById('password2').value;
+                <div class="fromfeld">
+
+                    <div> <input type="password" placeholder="Password" id="password" required></div>
+                </div>
+
+                <div class="fromfeld">
+
+                    <div> <input type="password" placeholder="Repeat Password" id="repeatPassword" required></div>
+                </div>
 
 
-            axios.post('http://localhost:3000/login', {
+                <div>
+                    <button type="submit" class="btn btn-dark mt-3 ms-5" id="btn2">SignUp</button>
+                </div>
+            </form>
 
-                email,
-                password,
-
-            })
-                .then(function (response) {
-                    console.log(response.data);
-                    document.querySelector("#message2").innerHTML = response.data.message;
-                })
-                .catch(function (error) {
-                    console.log(error.response.data);
-                    document.querySelector("#message2").innerHTML = error.response.data.message;
-                });
-        }
+        </div>
+        <div class="ans">
+            <b>
+                <p id="message"></p>
+            </b>
+        </div>
+        <div class="login2">
+            <h5> <a href="http://127.0.0.1:5500/login.html" class="login1">Login hare</a></h5>
+        </div>
+    </div>
 
 
-
-    </script>
 
 
 </body>

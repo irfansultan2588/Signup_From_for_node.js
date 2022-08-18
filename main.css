@@ -1,0 +1,89 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to left, #283c86, #45a247);
+}
+
+.heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signupdiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.fromfeld {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+input {
+    height: 30px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.maintop {
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    border-radius: 9%;
+    margin-top: 2rem;
+    background: linear-gradient(to left, #283c86, #45a247);
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.ans {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+}
+
+#btn2:hover {
+    color: #283c86;
+    background-color: #45a247;
+}
+
+.login2 {
+    text-align: center;
+}
+
+.login1 {
+    text-decoration: none;
+    color: black;
+}
+
+.haed {
+    margin-top: 20px;
+}
+
+.main {
+    width: 30%;
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8%;
+    background: linear-gradient(to left, #283c86, #45a247);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+.abc {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

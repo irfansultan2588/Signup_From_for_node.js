@@ -85,11 +85,11 @@
             })
                 .then(function (response) {
                     console.log(response.data);
-                    document.querySelector("#message2").innerHTML = response.data.message;
+                    document.querySelector("#message").innerHTML = response.data.message;
                 })
                 .catch(function (error) {
                     console.log(error.response.data);
-                    document.querySelector("#message2").innerHTML = error.response.data.message;
+                    document.querySelector("#message").innerHTML = error.response.data.message;
                 });
         }
 
@@ -101,13 +101,8 @@
             var email = document.getElementById('email2').value;
             var password = document.getElementById('password2').value;
 
-            // if (password !== repeatPassword) {
-            //     document.querySelector("#message2").innerHTML = 'Passwords do not match, please try again';
-            //     return;
-            // }
 
             axios.post('http://localhost:3000/login', {
-
 
                 email,
                 password,

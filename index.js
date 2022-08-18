@@ -44,7 +44,7 @@ function login() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
 
-    debugger
+
     axios.post('https://my-signup-and-login-server.herokuapp.com/login', {
 
         email,

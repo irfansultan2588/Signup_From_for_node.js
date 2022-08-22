@@ -11,8 +11,8 @@ function signup() {
         document.querySelector("#message").innerHTML = 'Passwords do not match, please try again';
         return;
     }
-
-    axios.post('https://my-signup-and-login-server.herokuapp.com/signup', {
+    // https://my-signup-and-login-server.herokuapp.com/signup'
+    axios.post('http://localhost:3000/signup', {
 
         firstName,
         lastName,
@@ -56,5 +56,31 @@ function login() {
         .catch(function (error) {
             console.log(error.response.data);
             document.querySelector("#message2").innerHTML = error.response.data.message;
+        });
+}
+
+
+
+///////get all user code////////
+
+
+
+function getAllUser() {
+
+    axios.get('http://localhost:3000/users')
+        .then(function (response) {
+            console.log(response.data);
+
+            document.querySelector("#allUser").innerHTML = ""
+
+            response.data.map((eachUser) => {
+                document.querySelector("#allUser").innerHTML +=
+                    `${eachUser.firstName} ${eachUser.lastName} - ${eachUser.email} <br>`
+            })
+
+        })
+        .catch(function (error) {
+            console.log(error.response.data);
+            document.querySelector("#message").innerHTML = error.response.data.message;
         });
 }

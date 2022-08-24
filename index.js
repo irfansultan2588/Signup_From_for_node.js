@@ -68,6 +68,7 @@ function login() {
 function getAllUser() {
 
     axios.get('https://my-signup-and-login-server.herokuapp.com/users')
+
         .then(function (response) {
             console.log(response.data);
 

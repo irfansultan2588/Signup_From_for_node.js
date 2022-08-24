@@ -12,7 +12,7 @@ function signup() {
         return;
     }
     // https://my-signup-and-login-server.herokuapp.com/signup'
-    axios.post('https://my-signup-and-login-server.herokuapp.com//signup', {
+    axios.post('https://my-signup-and-login-server.herokuapp.com/signup', {
 
         firstName,
         lastName,
@@ -67,7 +67,7 @@ function login() {
 
 function getAllUser() {
 
-    axios.get('https://my-signup-and-login-server.herokuapp.com//users')
+    axios.get('https://my-signup-and-login-server.herokuapp.com/users')
         .then(function (response) {
             console.log(response.data);
 
